@@ -1,0 +1,12 @@
+.numpad-grid {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 200px;
+  }
+  
+button {
+    padding: 10px;
+    background-color: #ccc;
+    border-radius: 10%;
+  }
