@@ -39,9 +39,10 @@ const populate_display = function(value) {
 const num_buttons = document.querySelectorAll('.number-button');
 const op_buttons = document.querySelectorAll('.operator-button');
 const equals_button = document.querySelectorAll('.equals-button');
+const clear_button = document.querySelectorAll('.clear-button');
 
 num_buttons.forEach(button => button.addEventListener('click', function(){
-    value += button.dataset.num
+    value += button.dataset.num;
     populate_display(value);
 }, false));
 
@@ -58,13 +59,20 @@ op_buttons.forEach(button => button.addEventListener('click', function(){
 equals_button.forEach(button => button.addEventListener('click', function(){
     if (operator) {
         second_operand = value;
-        value = operate(op_dict[operator], Number(first_operand), Number(second_operand))
+        value = operate(op_dict[operator], Number(first_operand), Number(second_operand));
         populate_display(value);
-        console.log(value)
         first_operand = value;
     }
 
     first_operand = value;
     value = "";
-    operator = null
+    operator = null;
+}))
+
+clear_button.forEach(button => button.addEventListener('click', function(){
+    value = "";
+    populate_display(value);
+    operator = null;
+    first_operand = null;
+    second_operand = null;
 }))
