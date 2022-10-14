@@ -21,5 +21,14 @@ button {
 
 .container {
     display:flex;
-    max-width: 300px;
+    width: 300px;
+}
+
+#display {
+    width: 300px;
+    height: 50px;
+    background-color: antiquewhite;
+    font-size: 36px;
+    text-align: right;
+    border-radius: 5%;
 }
